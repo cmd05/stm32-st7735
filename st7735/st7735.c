@@ -166,7 +166,7 @@ void ST7735_DrawPixel(uint16_t x, uint16_t y, uint16_t color) {
 
     ST7735_Select();
 
-    ST7735_SetAddressWindow(x, y, x+1, y+1);
+    ST7735_SetAddressWindow(x, y, x, y);
     uint8_t data[] = { color >> 8, color & 0xFF };
     ST7735_WriteData(data, sizeof(data));
 
